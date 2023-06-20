@@ -1,0 +1,25 @@
+.post-most-viewed {
+  @apply flex gap-2 w-[80%];
+
+  &__top {
+    @apply text-4xl font-bold text-app-gray-50;
+  }
+
+  &__title {
+    @apply font-bold;
+  }
+
+  &__details {
+    @apply flex items-center gap-3 text-sm;
+  }
+
+  .post-details {
+    &__date {
+      @apply text-app-gray;
+    }
+
+    &__viewed-content {
+      @apply flex gap-1 items-center;
+    }
+  }
+}

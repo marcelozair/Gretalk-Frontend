@@ -1,0 +1,32 @@
+.post-resume {
+  @apply flex gap-3;
+}
+
+.post-resume__content {
+  @apply w-[75%];
+}
+
+.post-resume__image {
+  @apply w-[25%] h-[180px];
+}
+
+/* USER PROFILE */
+.profile {
+  @apply flex gap-2 items-center mb-2;
+}
+
+.profile__image {
+  @apply w-[30px] h-[30px] rounded-full object-cover;
+}
+
+.profile__names {
+  @apply text-[12px] mt-[5px];
+}
+
+.profile__username {
+  @apply not-italic text-black;
+}
+
+.profile__profesion {
+  @apply text-[#B8B8B8] translate-y-[-5px];
+}

@@ -7,10 +7,26 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        /* COLORS */
+        'primary': 'var(--primary)',
+        'secundary': 'var(--secundary)',
+
+        /* BASE COLORS */
+        'black': 'var(--black)',
+        'white': 'var(--white)',
+        'app-gray': 'var(--app-gray)',
+
+        /* BORDER */
+        'app-gray-50': 'var(--app-gray-50)',
+        'app-border': 'var(--app-border)',
+      },
+      width: {
+        'max-container': 'var(--max-container)',
+        'max-aside': 'var(--max-aside)',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        hero:  "url('/images/background.svg')",
       },
     },
   },

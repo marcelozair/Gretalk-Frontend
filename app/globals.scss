@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+  /* COLORS */
+  --primary: #B711F1;
+  --secundary: #F49223;
+
+  /* BASE COLORS */
+  --black: #1E1E1E;
+  --white: #FFF;
+  --app-gray: #AEAEAE;
+  --app-gray-50: #E4E4E4;
+
+  /* BORDER */
+  --app-border: #D7D7D7;
+
+
+  /* SIZES */
+  --max-container: 1200px;
+  --max-aside: 400px
+}

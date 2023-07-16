@@ -2,6 +2,7 @@ import { Post } from './interfaces/post';
 import { fakePosts } from './constants/data';
 import { Hero } from './components/home/Hero/Hero';
 import { Aside } from './components/layouts/Content/Aside';
+import { SectionLine } from './components/common/SectionLine';
 import { Section } from './components/common/Section/Section';
 import { Content } from './components/layouts/Content/Content';
 import { PostResume } from './components/post/PostResume/PostResume';
@@ -24,7 +25,8 @@ export default function Home() {
             {[1, 2, 3, 4, 5, 6].map((n) => <PostMostViewed key={n} index={n} />)}
           </div>
         </Section>
-        <div className="w-full h-[1px] bg-app-border my-10"></div>
+
+        <SectionLine />
 
         <DisplayContainer>
           <Content>
@@ -38,7 +40,6 @@ export default function Home() {
           </Aside>
         </DisplayContainer>
       </Container>
-
     </main>
   )
 }

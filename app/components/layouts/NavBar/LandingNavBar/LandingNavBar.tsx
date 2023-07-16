@@ -2,9 +2,11 @@
 
 import './LandingNavBar.scss';
 import { Logo } from '../Logo/Logo';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Container } from '../../Container/Container';
 import { Button } from '@/app/components/common/Button/Button';
+import { SignUpModal } from '@/app/components/auth/SignUpModal/SignUpModal';
+import { SignInModal } from '@/app/components/auth/SignInModal/SignInModal';
 
 const navigation = [
   {
@@ -23,8 +25,33 @@ export const LandingNavBar = () => {
   const [stickyHeader, setStickyHeader] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
+  const scrollEvent = () => {
+    const isActive = headerRef?.current?.classList.contains('active-header');
+    if (window.scrollY > 100 && !isActive) {
+      headerRef?.current?.classList.add('active-header');
+      setStickyHeader(true);
+    } else if (window.scrollY < 100 && isActive) {
+      headerRef?.current?.classList.remove('active-header');
+      setStickyHeader(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', scrollEvent);
+    return () => document.removeEventListener('scroll', scrollEvent);
+  }, []);
+
   return (
     <>
+      <SignUpModal
+        onClose={() => setShowSignUpModal(false)}
+        show={showSignUpModal}
+      />
+
+      <SignInModal
+        onClose={() => setShowSignInModal(false)}
+        show={showSignInModal}
+      />
       <header ref={headerRef} className="header">
         <Container>
           <div className="flex items-center justify-between">
@@ -44,7 +71,7 @@ export const LandingNavBar = () => {
                 Sign in
               </button>
               <Button
-                style={stickyHeader ? 'dark' : 'normal'}
+                style={stickyHeader ? 'dark' : 'white'}
                 onClick={() => setShowSignUpModal(true)}
               >
                 Get started
